@@ -16,6 +16,13 @@ $(document).ready(function() {
   $("form#leapYear").submit(function(event){
     event.preventDefault();
     var year = parseInt($("input#yearInput").val());
+    var result = leapYear(year) === true ? "YES!" : "NO :(";
+    $("p.yearResult").text(result);
+  });
+
+  $("button#redo").click(function(){
+    $("input#yearInput").val("");
+    $("p.yearResult").text("");
   });
 
 });
